@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fitness Tracker</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/user-session.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-column mobile-nav">
+        <div id="navm">
+          <div class="icon">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="navm-menu">
+            <div class="logo-container">
+              <p id="logo">
+                <a href="index.html"
+                  ><span>F</span>itness<span>T</span>racker</a
+                >
+              </p>
+            </div>
+            <div class="menu-container">
+              <ul id="nav-menu">
+                <li class="nav-menu-item" id="loginnav">
+                  <a href="login.html">Login</a>
+                </li>
+                <li class="nav-menu-item" id="registernav">
+                  <a href="signup.html">Sign up</a>
+                </li>
+                <li class="nav-menu-item"><a href="index.html">Home</a></li>
+                <li class="nav-menu-item">
+                  <a href="my-plans.html">My Plans</a>
+                </li>
+                <li class="nav-menu-item">
+                  <a href="create-a-plan.html">Create a plane</a>
+                </li>
+                <li style="display: none" class="nav-menu-item logoutnav">
+                  <a href="#">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="logo-container">
+          <p id="logo">
+            <a href="index.html"><span>F</span>itness<span>T</span>racker</a>
+          </p>
+        </div>
+        <div class="menu-container">
+          <ul id="nav-menu">
+            <li class="nav-menu-item"><a href="index.html">Home</a></li>
+            <li class="nav-menu-item"><a href="my-plans.html">My Plans</a></li>
+            <li class="nav-menu-item">
+              <a href="create-a-plan.html">Create a plane</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="sign-nav">
+          <ul>
+            <li class="nav-menu-item" id="loginnav">
+              <a href="login.html">Login</a>
+            </li>
+            <li class="nav-menu-item" id="registernav">
+              <a href="signup.html">Sign up</a>
+            </li>
+          </ul>
+        </div>
+        <div class="user-info-container">
+          <ul>
+            <div id="profile-picture-nav"></div>
+            <span id="username-nav">Loading...</span
+            ><span style="font-size: 14px">▼</span>
+            <ul>
+              <li>Score: <span id="totalScore">...</span></li>
+              <a href="/myprofile.html"> <li>My profile</li></a>
+              <li class="nav-menu-item logoutnav">Logout</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div style="display: none" id="loading-icon"></div>
+      <div class="section site-banner" autoswap>
+        <div class="banner-buttons">
+          <button><</button>
+          <button>></button>
+        </div>
+        <div class="current-banner"></div>
+        <div>
+          <div class="banner-container">
+            <div style="margin-bottom: 6vw;">
+              <h1 class="section-name">Welcome to Fitness Tracker Pro</h1>
+              <h1>Login And Start Tracking your Fitness Plans</h1>
+            </div>
+            <a
+              class="button start-for-free"
+              style="text-decoration: none"
+              href="/login.html"
+              >Start For Free</a
+            >
+            <a
+              class="button start-training"
+              style="text-decoration: none"
+              href="/prograss.html"
+              >Start training</a
+            >
+          </div>
+        </div>
+        <div class="banner-collection">
+          <div>
+            <img class="banner-background" src="/images/banner1.jpg" />
+            <div class="banner-container"></div>
+          </div>
+          <div>
+            <img class="banner-background" src="/images/banner2.jpg" />
+            <div class="banner-container"></div>
+          </div>
+          <div>
+            <img class="banner-background" src="/images/banner3.jpg" />
+            <div class="banner-container"></div>
+          </div>
+          <div>
+            <img class="banner-background" src="/images/banner4.jpg" />
+            <div class="banner-container"></div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="box">
+          <img src="/images/eat.png" />
+          <div>
+            <h3>Eat Healthy</h3>
+            <p>
+              A
+              <a href="https://en.wikipedia.org/wiki/Healthy_diet"
+                >healthy diet</a
+              >
+              is a diet that maintains or improves overall health. A healthy
+              diet provides the body with essential nutrition: fluid,
+              macronutrients such as protein, micronutrients such as vitamins,
+              and adequate fibre and food energy.
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <h3>Exercise</h3>
+            <p>
+              <a href="https://en.wikipedia.org/wiki/Exercise">Exercising</a>
+              helps growth and improve strength, develop muscles and the
+              cardiovascular system, hone athletic skills, weight loss or
+              maintenance, improve health, or simply for enjoyment.
+            </p>
+          </div>
+          <img src="/images/train.png" />
+        </div>
+        <div class="box">
+          <img src="/images/water.png" />
+          <div>
+            <h3>Stay Hydrated</h3>
+            <p>
+              The amount of
+              <a
+                href="https://en.wikipedia.org/wiki/Drinking_water#Requirements_for_drinking"
+                >drinking water</a
+              >
+              required per day is variable. It depends on physical activity,
+              age, health, and environmental conditions. The European Food
+              Safety Authority recommends 2.0 litres of total water per day for
+              adult women and 2.5 litres per day for adult men.
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <h3>Sleep Well</h3>
+            <p>
+              Healthy adults get an average of 7 to 9 hours per night of
+              <a href="https://en.wikipedia.org/wiki/Sleep">sleep</a>. The human
+              organism physically restores itself during sleep, occurring mostly
+              during slow-wave sleep during which body temperature, heart rate,
+              and brain oxygen consumption decrease. In both the brain and body,
+              the reduced rate of metabolism enables countervailing restorative
+              processes.
+            </p>
+          </div>
+          <img src="/images/sleep.png" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

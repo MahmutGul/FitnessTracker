@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Create a plan - Fitness Tracker</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/user-session.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-column mobile-nav">
+        <div id="navm">
+          <div class="icon">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="navm-menu">
+            <div class="logo-container">
+              <p id="logo">
+                <a href="index.html"
+                  ><span>F</span>itness<span>T</span>racker</a
+                >
+              </p>
+            </div>
+            <div class="menu-container">
+              <ul id="nav-menu">
+                <li class="nav-menu-item" id="loginnav">
+                  <a href="login.html">Login</a>
+                </li>
+                <li class="nav-menu-item" id="registernav">
+                  <a href="signup.html">Sign up</a>
+                </li>
+                <li class="nav-menu-item"><a href="index.html">Home</a></li>
+                <li class="nav-menu-item">
+                  <a href="my-plans.html">My Plans</a>
+                </li>
+                <li class="nav-menu-item">
+                  <a href="create-a-plan.html">Create a plane</a>
+                </li>
+                <li style="display: none" class="nav-menu-item" id="logoutnav">
+                  <a href="#">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="logo-container">
+          <p id="logo">
+            <a href="index.html"><span>F</span>itness<span>T</span>racker</a>
+          </p>
+        </div>
+        <div class="menu-container">
+          <ul id="nav-menu">
+            <li class="nav-menu-item"><a href="index.html">Home</a></li>
+            <li class="nav-menu-item"><a href="my-plans.html">My Plans</a></li>
+            <li class="nav-menu-item">
+              <a href="create-a-plan.html">Create a plane</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="sign-nav">
+          <ul>
+            <li class="nav-menu-item" id="loginnav">
+              <a href="login.html">Login</a>
+            </li>
+            <li class="nav-menu-item" id="registernav">
+              <a href="signup.html">Sign up</a>
+            </li>
+          </ul>
+        </div>
+        <div class="user-info-container">
+          <ul>
+            <div id="profile-picture-nav"></div>
+            <span id="username-nav">Loading...</span
+            ><span style="font-size: 14px">▼</span>
+            <ul>
+              <li>Score: <span id="totalScore">...</span></li>
+              <a href="/myprofile.html"> <li>My profile</li></a>
+              <li class="nav-menu-item logoutnav">Logout</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="error-msg"></div>
+    <div class="container">
+      <h2 class="section-name">Create a plane</h2>
+      <div class="sub-section">
+        <!-- sssssssss -->
+        <div id="weekly-plan">
+          <div class="custom-radio-chkbx">
+            <button openpopup="ready-made-plans" id="plan-load">
+              Add Ready-Made plan
+            </button>
+            <label>
+              <input
+                type="checkbox"
+                value="test"
+                name="custom-plan"
+                id="customplaninput"
+              />
+              <span>Custom plan</span>
+            </label>
+          </div>
+          <div class="popup center" id="ready-made-plans">
+            <div style="padding: 0 2rem">
+              <h3>Ready plans</h3>
+            </div>
+            <div style="position: absolute; right: 2rem; top: 1rem; z-index: 9">
+              <span class="popup-close">X</span>
+            </div>
+            <div
+              style="padding: 0.5rem 1rem; font-size: 14px"
+              class="container center custom-radio-chkbx"
+            >
+              <hr />
+              <div class="ready-plan" dayscount="5" id="burnAndBuild">
+                <span style="font-weight: bold"
+                  >Muscle gain and fat burn <br /><span
+                    style="font-size: 12px; color: red"
+                    >(choose 5 days)</span
+                  ></span
+                >
+                <div class="plan-days">
+                  <label>
+                    <input type="checkbox" name="sunday" />
+                    <span>Su</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="monday" />
+                    <span>Mo</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="tuesday" />
+                    <span>Tu</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="wednesday" />
+                    <span>We</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="thursday" />
+                    <span>Th</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="friday" />
+                    <span>Fr</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="saturday" />
+                    <span>Sa</span>
+                  </label>
+                  <button style="display: none" class="select-plan">
+                    Select
+                  </button>
+                </div>
+              </div>
+              <div class="ready-plan" dayscount="5" id="buildMuscle">
+                <span style="font-weight: bold"
+                  >Muscle gain <br /><span style="font-size: 12px; color: red"
+                    >(choose 5 days)</span
+                  ></span
+                >
+                <div class="plan-days">
+                  <label>
+                    <input type="checkbox" name="sunday" />
+                    <span>Su</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="monday" />
+                    <span>Mo</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="tuesday" />
+                    <span>Tu</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="wednesday" />
+                    <span>We</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="thursday" />
+                    <span>Th</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="friday" />
+                    <span>Fr</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="saturday" />
+                    <span>Sa</span>
+                  </label>
+                  <button style="display: none" class="select-plan">
+                    Select
+                  </button>
+                </div>
+              </div>
+              <div class="ready-plan" dayscount="4" id="burnFat">
+                <span style="font-weight: bold"
+                  >Fat burn <br /><span style="font-size: 12px; color: red"
+                    >(choose 4 days)</span
+                  ></span
+                >
+                <div class="plan-days">
+                  <label>
+                    <input type="checkbox" name="sunday" />
+                    <span>Su</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="monday" />
+                    <span>Mo</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="tuesday" />
+                    <span>Tu</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="wednesday" />
+                    <span>We</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="thursday" />
+                    <span>Th</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="friday" />
+                    <span>Fr</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="saturday" />
+                    <span>Sa</span>
+                  </label>
+                  <button style="display: none" class="select-plan">
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form id="custom-plan" class="custom-radio-chkbx" action="">
+            <div id="plan-inf">
+              <div class="br"></div>
+              <label for="plan-name">
+                <span>Plan name:</span>
+                <input type="text" id="custom-plan-name" name="plan-name" />
+              </label>
+              <div class="br"></div>
+              <div id="plan-type">
+                <span>Plan goal:</span>
+                <label>
+                  <input value="fat-lose" type="radio" name="plan-type" />
+                  <span>Fat lose</span>
+                </label>
+                <label>
+                  <input value="muscle-gain" type="radio" name="plan-type" />
+                  <span>Muscle gain</span>
+                </label>
+                <label>
+                  <input
+                    value="both-goals"
+                    type="radio"
+                    name="plan-type"
+                    checked
+                  />
+                  <span>Both</span>
+                </label>
+              </div>
+              <div class="br"></div>
+              <div id="exercise-days">
+                <p>
+                  Exercise days
+                  <span style="font-size: 12px; font-weight: bold"
+                    >(5 days at most recommended)</span
+                  >
+                </p>
+                <label>
+                  <input value="sunday" type="checkbox" name="select-muscles" />
+                  <span>Sunday</span>
+                </label>
+                <label>
+                  <input
+                    value="monday"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Monday</span>
+                </label>
+                <label>
+                  <input
+                    value="tuesday"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Tuesday</span>
+                </label>
+                <label>
+                  <input
+                    value="wednesday"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Wednesday</span>
+                </label>
+                <label>
+                  <input
+                    value="thursday"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Thursday</span>
+                </label>
+                <label>
+                  <input
+                    value="friday"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Friday</span>
+                </label>
+                <label>
+                  <input
+                    value="saturday"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Saturday</span>
+                </label>
+              </div>
+            </div>
+            <h3>Choose exercises</h3>
+            <!-- sssssssssss -->
+            <div id="sunday" class="exercise-day" style="display: none">
+              <hr />
+              <h3>Sunday</h3>
+              <div class="fat-lose-plan">
+                <p>
+                  Cardio:
+                  <span style="font-size: 12px; font-weight: bold"
+                    >(HIIT exercise is recommended at most once a week)</span
+                  >
+                </p>
+                <label>
+                  <input
+                    value="Run"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Run</span>
+                </label>
+                <label>
+                  <input
+                    value="Jump-rope"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Jump rope</span>
+                </label>
+                <label>
+                  <input value="Cycle" type="checkbox" name="select-muscles" />
+                  <span>Cycle</span>
+                </label>
+                <label>
+                  <input value="HIIT" type="checkbox" name="select-muscles" />
+                  <span>HIIT</span>
+                </label>
+              </div>
+              <div class="muscle-gain-plan">
+                <p>Strength:</p>
+                <label>
+                  <input value="Chest" type="checkbox" name="select-muscles" />
+                  <span>Chest</span>
+                </label>
+                <label>
+                  <input value="Back" type="checkbox" name="select-muscles" />
+                  <span>Back</span>
+                </label>
+                <label>
+                  <input
+                    value="Shoulders"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Shoulders</span>
+                </label>
+                <label>
+                  <input value="Abs" type="checkbox" name="select-muscles" />
+                  <span>Abs</span>
+                </label>
+                <label>
+                  <input value="Biceps" type="checkbox" name="select-muscles" />
+                  <span>Biceps</span>
+                </label>
+                <label>
+                  <input
+                    value="Triceps"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Triceps</span>
+                </label>
+                <label>
+                  <input value="Legs" type="checkbox" name="select-muscles" />
+                  <span>Legs</span>
+                </label>
+              </div>
+            </div>
+            <!-- sssssssssss -->
+            <div id="monday" class="exercise-day" style="display: none">
+              <hr />
+              <h3>Monday</h3>
+              <div class="fat-lose-plan">
+                <p>
+                  Cardio:
+                  <span style="font-size: 12px; font-weight: bold"
+                    >(HIIT exercise is recommended at most once a week)</span
+                  >
+                </p>
+                <label>
+                  <input value="Run" type="checkbox" name="select-muscles" />
+                  <span>Run</span>
+                </label>
+                <label>
+                  <input
+                    value="Jump-rope"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Jump rope</span>
+                </label>
+                <label>
+                  <input value="Cycle" type="checkbox" name="select-muscles" />
+                  <span>Cycle</span>
+                </label>
+                <label>
+                  <input
+                    value="HIIT"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>HIIT</span>
+                </label>
+              </div>
+              <div class="muscle-gain-plan">
+                <p>Strength:</p>
+                <label>
+                  <input
+                    value="Chest"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Chest</span>
+                </label>
+                <label>
+                  <input value="Back" type="checkbox" name="select-muscles" />
+                  <span>Back</span>
+                </label>
+                <label>
+                  <input
+                    value="Shoulders"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Shoulders</span>
+                </label>
+                <label>
+                  <input value="abs" type="checkbox" name="select-muscles" />
+                  <span>Abs</span>
+                </label>
+                <label>
+                  <input
+                    value="Biceps"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Biceps</span>
+                </label>
+                <label>
+                  <input
+                    value="Triceps"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Triceps</span>
+                </label>
+                <label>
+                  <input value="Legs" type="checkbox" name="select-muscles" />
+                  <span>Legs</span>
+                </label>
+              </div>
+            </div>
+            <!-- sssssssssss -->
+            <div id="tuesday" class="exercise-day" style="display: none">
+              <hr />
+              <h3>Tuesday</h3>
+              <div class="fat-lose-plan">
+                <p>
+                  Cardio:
+                  <span style="font-size: 12px; font-weight: bold"
+                    >(HIIT exercise is recommended at most once a week)</span
+                  >
+                </p>
+                <label>
+                  <input
+                    value="Run"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Run</span>
+                </label>
+                <label>
+                  <input
+                    value="Jump-rope"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Jump rope</span>
+                </label>
+                <label>
+                  <input value="Cycle" type="checkbox" name="select-muscles" />
+                  <span>Cycle</span>
+                </label>
+                <label>
+                  <input value="HIIT" type="checkbox" name="select-muscles" />
+                  <span>HIIT</span>
+                </label>
+              </div>
+              <div class="muscle-gain-plan">
+                <p>Strength:</p>
+                <label>
+                  <input value="Chest" type="checkbox" name="select-muscles" />
+                  <span>Chest</span>
+                </label>
+                <label>
+                  <input
+                    value="Back"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Back</span>
+                </label>
+                <label>
+                  <input
+                    value="Shoulders"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Shoulders</span>
+                </label>
+                <label>
+                  <input value="abs" type="checkbox" name="select-muscles" />
+                  <span>Abs</span>
+                </label>
+                <label>
+                  <input value="Biceps" type="checkbox" name="select-muscles" />
+                  <span>Biceps</span>
+                </label>
+                <label>
+                  <input
+                    value="Triceps"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Triceps</span>
+                </label>
+                <label>
+                  <input value="Legs" type="checkbox" name="select-muscles" />
+                  <span>Legs</span>
+                </label>
+              </div>
+            </div>
+            <!-- sssssssssss -->
+            <div id="wednesday" class="exercise-day" style="display: none">
+              <hr />
+              <h3>Wednesday</h3>
+              <div class="fat-lose-plan">
+                <p>
+                  Cardio:
+                  <span style="font-size: 12px; font-weight: bold"
+                    >(HIIT exercise is recommended at most once a week)</span
+                  >
+                </p>
+                <label>
+                  <input
+                    value="Run"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Run</span>
+                </label>
+                <label>
+                  <input
+                    value="Jump-rope"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Jump rope</span>
+                </label>
+                <label>
+                  <input value="Cycle" type="checkbox" name="select-muscles" />
+                  <span>Cycle</span>
+                </label>
+                <label>
+                  <input value="HIIT" type="checkbox" name="select-muscles" />
+                  <span>HIIT</span>
+                </label>
+              </div>
+              <div class="muscle-gain-plan">
+                <p>Strength:</p>
+                <label>
+                  <input value="Chest" type="checkbox" name="select-muscles" />
+                  <span>Chest</span>
+                </label>
+                <label>
+                  <input value="Back" type="checkbox" name="select-muscles" />
+                  <span>Back</span>
+                </label>
+                <label>
+                  <input
+                    value="Shoulders"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Shoulders</span>
+                </label>
+                <label>
+                  <input value="abs" type="checkbox" name="select-muscles" />
+                  <span>Abs</span>
+                </label>
+                <label>
+                  <input value="Biceps" type="checkbox" name="select-muscles" />
+                  <span>Biceps</span>
+                </label>
+                <label>
+                  <input
+                    value="Triceps"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Triceps</span>
+                </label>
+                <label>
+                  <input value="Legs" type="checkbox" name="select-muscles" />
+                  <span>Legs</span>
+                </label>
+              </div>
+            </div>
+            <!-- sssssssssss -->
+            <div id="thursday" class="exercise-day" style="display: none">
+              <hr />
+              <h3>Thursday</h3>
+              <div class="fat-lose-plan">
+                <p>
+                  Cardio:
+                  <span style="font-size: 12px; font-weight: bold"
+                    >(HIIT exercise is recommended at most once a week)</span
+                  >
+                </p>
+                <label>
+                  <input
+                    value="Run"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Run</span>
+                </label>
+                <label>
+                  <input
+                    value="Jump-rope"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Jump rope</span>
+                </label>
+                <label>
+                  <input value="Cycle" type="checkbox" name="select-muscles" />
+                  <span>Cycle</span>
+                </label>
+                <label>
+                  <input value="HIIT" type="checkbox" name="select-muscles" />
+                  <span>HIIT</span>
+                </label>
+              </div>
+              <div class="muscle-gain-plan">
+                <p>Strength:</p>
+                <label>
+                  <input value="Chest" type="checkbox" name="select-muscles" />
+                  <span>Chest</span>
+                </label>
+                <label>
+                  <input value="Back" type="checkbox" name="select-muscles" />
+                  <span>Back</span>
+                </label>
+                <label>
+                  <input
+                    value="Shoulders"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Shoulders</span>
+                </label>
+                <label>
+                  <input
+                    value="abs"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Abs</span>
+                </label>
+                <label>
+                  <input value="Biceps" type="checkbox" name="select-muscles" />
+                  <span>Biceps</span>
+                </label>
+                <label>
+                  <input
+                    value="Triceps"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Triceps</span>
+                </label>
+                <label>
+                  <input value="Legs" type="checkbox" name="select-muscles" />
+                  <span>Legs</span>
+                </label>
+              </div>
+            </div>
+            <!-- sssssssssss -->
+            <div id="friday" class="exercise-day" style="display: none">
+              <hr />
+              <h3>Friday</h3>
+              <div class="fat-lose-plan">
+                <p>
+                  Cardio:
+                  <span style="font-size: 12px; font-weight: bold"
+                    >(HIIT exercise is recommended at most once a week)</span
+                  >
+                </p>
+                <label>
+                  <input
+                    value="Run"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Run</span>
+                </label>
+                <label>
+                  <input
+                    value="Jump-rope"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Jump rope</span>
+                </label>
+                <label>
+                  <input value="Cycle" type="checkbox" name="select-muscles" />
+                  <span>Cycle</span>
+                </label>
+                <label>
+                  <input value="HIIT" type="checkbox" name="select-muscles" />
+                  <span>HIIT</span>
+                </label>
+              </div>
+              <div class="muscle-gain-plan">
+                <p>Strength:</p>
+                <label>
+                  <input value="Chest" type="checkbox" name="select-muscles" />
+                  <span>Chest</span>
+                </label>
+                <label>
+                  <input value="Back" type="checkbox" name="select-muscles" />
+                  <span>Back</span>
+                </label>
+                <label>
+                  <input
+                    value="Shoulders"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Shoulders</span>
+                </label>
+                <label>
+                  <input value="abs" type="checkbox" name="select-muscles" />
+                  <span>Abs</span>
+                </label>
+                <label>
+                  <input value="Biceps" type="checkbox" name="select-muscles" />
+                  <span>Biceps</span>
+                </label>
+                <label>
+                  <input
+                    value="Triceps"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Triceps</span>
+                </label>
+                <label>
+                  <input
+                    value="Legs"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Legs</span>
+                </label>
+              </div>
+            </div>
+            <!-- sssssssssss -->
+            <div id="saturday" class="exercise-day" style="display: none">
+              <hr />
+              <h3>Saturday</h3>
+              <div class="fat-lose-plan">
+                <p>
+                  Cardio:
+                  <span style="font-size: 12px; font-weight: bold"
+                    >(HIIT exercise is recommended at most once a week)</span
+                  >
+                </p>
+                <label>
+                  <input
+                    value="Run"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Run</span>
+                </label>
+                <label>
+                  <input
+                    value="Jump-rope"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Jump rope</span>
+                </label>
+                <label>
+                  <input value="Cycle" type="checkbox" name="select-muscles" />
+                  <span>Cycle</span>
+                </label>
+                <label>
+                  <input value="HIIT" type="checkbox" name="select-muscles" />
+                  <span>HIIT</span>
+                </label>
+              </div>
+              <div class="muscle-gain-plan">
+                <p>Strength:</p>
+                <label>
+                  <input
+                    value="Chest"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Chest</span>
+                </label>
+                <label>
+                  <input
+                    value="Back"
+                    type="checkbox"
+                    name="select-muscles"
+                    checked
+                  />
+                  <span>Back</span>
+                </label>
+                <label>
+                  <input
+                    value="Shoulders"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Shoulders</span>
+                </label>
+                <label>
+                  <input value="abs" type="checkbox" name="select-muscles" />
+                  <span>Abs</span>
+                </label>
+                <label>
+                  <input value="Biceps" type="checkbox" name="select-muscles" />
+                  <span>Biceps</span>
+                </label>
+                <label>
+                  <input
+                    value="Triceps"
+                    type="checkbox"
+                    name="select-muscles"
+                  />
+                  <span>Triceps</span>
+                </label>
+                <label>
+                  <input value="Legs" type="checkbox" name="select-muscles" />
+                  <span>Legs</span>
+                </label>
+              </div>
+            </div>
+            <div class="fat-lose-plan"></div>
+            <hr />
+            <div class="br"></div>
+
+            <div class="custom-plan-submit">
+              <button
+                onclick="return false"
+                style="width: 100%"
+                id="custom-plan-submit"
+              >
+                Add plan
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- sssssssss -->
+      </div>
+    </div>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

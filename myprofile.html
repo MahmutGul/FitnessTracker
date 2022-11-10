@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My profile - Fitness Tracker</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/user-session.js"></script>
+  </head>
+  <body style="background: #ebebeb">
+    <div class="body-loading" id="full-screen-loading"></div>
+    <header>
+      <div class="header-column mobile-nav">
+        <div id="navm">
+          <div class="icon">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="navm-menu">
+            <div class="logo-container">
+              <p id="logo">
+                <a href="index.html"
+                  ><span>F</span>itness<span>T</span>racker</a
+                >
+              </p>
+            </div>
+            <div class="menu-container">
+              <ul id="nav-menu">
+                <li class="nav-menu-item" id="loginnav">
+                  <a href="login.html">Login</a>
+                </li>
+                <li class="nav-menu-item" id="registernav">
+                  <a href="signup.html">Sign up</a>
+                </li>
+                <li class="nav-menu-item"><a href="index.html">Home</a></li>
+                <li class="nav-menu-item">
+                  <a href="my-plans.html">My Plans</a>
+                </li>
+                <li class="nav-menu-item">
+                  <a href="create-a-plan.html">Create a plane</a>
+                </li>
+                <li style="display: none" class="nav-menu-item" id="logoutnav">
+                  <a href="#">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="logo-container">
+          <p id="logo">
+            <a href="index.html"><span>F</span>itness<span>T</span>racker</a>
+          </p>
+        </div>
+        <div class="menu-container">
+          <ul id="nav-menu">
+            <li class="nav-menu-item"><a href="index.html">Home</a></li>
+            <li class="nav-menu-item"><a href="my-plans.html">My Plans</a></li>
+            <li class="nav-menu-item">
+              <a href="create-a-plan.html">Create a plane</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="sign-nav">
+          <ul>
+            <li class="nav-menu-item" id="loginnav">
+              <a href="login.html">Login</a>
+            </li>
+            <li class="nav-menu-item" id="registernav">
+              <a href="signup.html">Sign up</a>
+            </li>
+          </ul>
+        </div>
+        <div class="user-info-container">
+          <ul>
+            <div id="profile-picture-nav"></div>
+            <span id="username-nav">Loading...</span
+            ><span style="font-size: 14px">▼</span>
+            <ul>
+              <li>Score: <span id="totalScore">...</span></li>
+              <a href="/myprofile.html"> <li>My profile</li></a>
+              <li class="nav-menu-item logoutnav">
+                Logout
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="myprofile">
+      <div style="display: none" id="loading-icon"></div>
+      <div class="container small-side center">
+        <div openpopup="upload-profile-picture" id="profile-picture-edit"></div>
+        <div class="popup center" id="upload-profile-picture">
+          <div class="container center">
+            <div
+              style="
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h3>Upload</h3>
+              <span style="cursor: pointer; padding: 1rem" class="popup-close"
+                >X</span
+              >
+            </div>
+            <hr />
+            <label for="profile-picture">
+              <div
+                id="uploadp"
+                style="
+                  background-color: transparent;
+                  color: #1f10ff;
+                  border: 1px solid;
+                  border-color: #1f10ff;
+                "
+                class="button"
+              >
+                Upload
+              </div>
+              <input
+                type="file"
+                accept="image/*"
+                name="profile-picture"
+                id="profile-picture"
+              />
+            </label>
+            <button id="submitImage" style="display:none;background-color: transparent;color: #1f10ff;border: 1px solid;border-color: #1f10ff;" class="button">Upload image</button>
+            <p style="margin: 0">Max file size: 5.00MB</p>
+          </div>
+        </div>
+        <h3 id="user-fullname">Loading...</h3>
+        <p id="profile-username">@loading...</p>
+      </div>
+      <div class="container box large-side">
+        <div>
+          <h3>Edit profile</h3>
+          <form onsubmit="return false" id="edit_profile">
+            <div>
+              <div class="br"></div>
+            </div>
+            Firstname:
+            <input
+              type="text"
+              name="fname"
+              id="firstname"
+              placeholder="Firstname"
+            />
+            <div class="br"></div>
+            Lastname:
+            <input
+              type="text"
+              name="lname"
+              id="lastname"
+              placeholder="Lastname"
+            />
+            <div class="br"></div>
+            Username:
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+              required
+            />
+            <span id="username_state"></span>
+            <div class="br"></div>
+            <span
+              style="
+                color: red;
+                font-size: 12px;
+                max-width: fit-content;
+                line-height: 1.5;
+                margin: auto;
+              "
+              id="error-message"
+            ></span>
+            <div class="br"></div>
+            <button>Edit</button>
+          </form>
+          <div class="br"></div>
+          <span
+            id="message-span"
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: green;
+              visibility: hidden;
+              opacity: 0;
+            "
+          ></span>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

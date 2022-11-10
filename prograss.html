@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fitness Tracker</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/user-session.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-column mobile-nav">
+        <div id="navm">
+          <div class="icon">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="navm-menu">
+            <div class="logo-container">
+              <p id="logo">
+                <a href="index.html"
+                  ><span>F</span>itness<span>T</span>racker</a
+                >
+              </p>
+            </div>
+            <div class="menu-container">
+              <ul id="nav-menu">
+                <li class="nav-menu-item" id="loginnav">
+                  <a href="login.html">Login</a>
+                </li>
+                <li class="nav-menu-item" id="registernav">
+                  <a href="signup.html">Sign up</a>
+                </li>
+                <li class="nav-menu-item"><a href="index.html">Home</a></li>
+                <li class="nav-menu-item">
+                  <a href="my-plans.html">My Plans</a>
+                </li>
+                <li class="nav-menu-item">
+                  <a href="create-a-plan.html">Create a plane</a>
+                </li>
+                <li style="display: none" class="nav-menu-item logoutnav">
+                  <a href="#">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="logo-container">
+          <p id="logo">
+            <a href="index.html"><span>F</span>itness<span>T</span>racker</a>
+          </p>
+        </div>
+        <div class="menu-container">
+          <ul id="nav-menu">
+            <li class="nav-menu-item"><a href="index.html">Home</a></li>
+            <li class="nav-menu-item"><a href="my-plans.html">My Plans</a></li>
+            <li class="nav-menu-item">
+              <a href="create-a-plan.html">Create a plane</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="sign-nav">
+          <ul>
+            <li class="nav-menu-item" id="loginnav">
+              <a href="login.html">Login</a>
+            </li>
+            <li class="nav-menu-item" id="registernav">
+              <a href="signup.html">Sign up</a>
+            </li>
+          </ul>
+        </div>
+        <div class="user-info-container">
+          <ul>
+            <div id="profile-picture-nav"></div>
+            <span id="username-nav">Loading...</span
+            ><span style="font-size: 14px">▼</span>
+            <ul>
+              <li>Score: <span id="totalScore">...</span></li>
+              <a href="/myprofile.html"> <li>My profile</li></a>
+              <li class="nav-menu-item logoutnav">Logout</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div style="display: none" id="loading-icon"></div>
+      <div class="section">
+        <div class="section-name" id="today"></div>
+        <div class="sub-section" id="todaysExercises"></div>
+        <div class="go-to-progress">
+          <button id="start-training" class="hide">Start Training ></button>
+          <div id="exercises"></div>
+        </div>
+      </div>
+      <hr />
+      <div class="section">
+        <div id="summary">
+          <div class="custom-radio-chkbx" id="summary-toggle">
+            <label>
+              <input
+                value="recent-summary"
+                type="radio"
+                name="plan-type"
+                checked
+              />
+              <span>Recent activity</span>
+            </label>
+            <label>
+              <input value="yesterday-summary" type="radio" name="plan-type" />
+              <span>Yesterday</span>
+            </label>
+          </div>
+          <div class="open" id="recent-summary">
+            <div id="recentPointsChart" style="height: 400px"></div>
+          </div>
+          <div style="display: none" id="yesterday-summary"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

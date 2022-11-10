@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My plans - Fitness Tracker</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/user-session.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-column mobile-nav">
+        <div id="navm">
+          <div class="icon">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="navm-menu">
+            <div class="logo-container">
+              <p id="logo">
+                <a href="index.html"
+                  ><span>F</span>itness<span>T</span>racker</a
+                >
+              </p>
+            </div>
+            <div class="menu-container">
+              <ul id="nav-menu">
+                <li class="nav-menu-item" id="loginnav">
+                  <a href="login.html">Login</a>
+                </li>
+                <li class="nav-menu-item" id="registernav">
+                  <a href="signup.html">Sign up</a>
+                </li>
+                <li class="nav-menu-item"><a href="index.html">Home</a></li>
+                <li class="nav-menu-item">
+                  <a href="my-plans.html">My Plans</a>
+                </li>
+                <li class="nav-menu-item">
+                  <a href="create-a-plan.html">Create a plane</a>
+                </li>
+                <li style="display: none" class="nav-menu-item" id="logoutnav">
+                  <a href="#">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="logo-container">
+          <p id="logo">
+            <a href="index.html"><span>F</span>itness<span>T</span>racker</a>
+          </p>
+        </div>
+        <div class="menu-container">
+          <ul id="nav-menu">
+            <li class="nav-menu-item"><a href="index.html">Home</a></li>
+            <li class="nav-menu-item"><a href="my-plans.html">My Plans</a></li>
+            <li class="nav-menu-item">
+              <a href="create-a-plan.html">Create a plane</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="sign-nav">
+          <ul>
+            <li class="nav-menu-item" id="loginnav">
+              <a href="login.html">Login</a>
+            </li>
+            <li class="nav-menu-item" id="registernav">
+              <a href="signup.html">Sign up</a>
+            </li>
+          </ul>
+        </div>
+        <div class="user-info-container">
+          <ul>
+            <div id="profile-picture-nav"></div>
+            <span id="username-nav">Loading...</span
+            ><span style="font-size: 14px">▼</span>
+            <ul>
+              <li>Score: <span id="totalScore">...</span></li>
+              <a href="/myprofile.html"> <li>My profile</li></a>
+              <li class="nav-menu-item logoutnav">
+                Logout
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div style="display: none" id="loading-icon"></div>
+      <div class="section" id="userplans">
+        <h2>My plans</h2>
+      </div>
+    </div>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

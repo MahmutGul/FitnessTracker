@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign up - Fitness Tracker</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/user-session.js"></script>
+  </head>
+  <body style="background: #ebebeb" class="signup-page">
+    <div style="display: none" id="full-screen-loading"></div>
+    <header>
+      <div class="header-column mobile-nav"></div>
+      <div class="header-column">
+        <div class="logo-container">
+          <p id="logo">
+            <a href="index.html"><span>F</span>itness<span>T</span>racker</a>
+          </p>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="sign-nav">
+          <ul>
+            <li class="nav-menu-item" id="loginnav">
+              <a href="login.html">Login</a>
+            </li>
+            <li class="nav-menu-item" id="registernav">
+              <a href="signup.html">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container center box">
+      <div>
+        <h2>Sign up</h2>
+        <form id="register_form" onsubmit="return false">
+          <input
+            type="email"
+            name="email"
+            id="useremail"
+            placeholder="Email"
+            required
+          />
+          <div class="br"></div>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+            required
+          />
+          <span
+            style="
+              max-width: 12px;
+              white-space: nowrap;
+              overflow: hidden;
+              font-size: 14px;
+              position: absolute;
+              margin-left: 6px;
+            "
+            id="username_state"
+          ></span>
+          <div class="br"></div>
+          <input
+            type="password"
+            name="userpass"
+            id="userpass"
+            placeholder="Password"
+            required
+            autocomplete
+          />
+          <div class="br"></div>
+          <input
+            type="password"
+            name="usercpass"
+            id="usercpass"
+            placeholder="Confirm password"
+            required
+            autocomplete
+          />
+          <div class="br"></div>
+          <span
+            style="
+              color: red;
+              font-size: 12px;
+              max-width: fit-content;
+              display: block;
+              line-height: 1.5;
+              margin: auto;
+            "
+            id="error-message"
+          ></span>
+          <div class="br"></div>
+          <button>Sign in</button>
+          <div class="br"></div>
+          <label style="font-size: 14px; user-select: none; cursor: pointer">
+            <input type="checkbox" id="rememberInput" name="rememberInput" />
+            Remember me
+          </label>
+        </form>
+        <div class="br"></div>
+        <a style="color: black; font-size: 14px" href="/login.html">Login</a>
+      </div>
+    </div>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

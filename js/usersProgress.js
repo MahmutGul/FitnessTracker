@@ -191,14 +191,16 @@ function usersProgress() {
             var y = b.replace(/_/g, "");
             return y - x;
           });
-          const cData = [];
+          let cData = [];
           for (let day in allDays) {
-            const dayDate = day.split("_").join("/");
-            if (cData.length > 6) {
-              cData.shift();
+            const dayDate = day.split("_");
+            if (dayDate[0].length < 2) {
+              let z = dayDate[0];
+              dayDate.shift();
+              dayDate.unshift("0" + z);
             }
             cData.push([
-              dayDate,
+              dayDate.join("/"),
               allDays[day].totalScore,
               allDays[day].totalScore,
             ]);
@@ -221,7 +223,9 @@ function usersProgress() {
               allDays2.indexOf(y.join("_")) - allDays2.indexOf(x.join("_"))
             );
           });
-          console.log(cData);
+          if (cData.length > 6) {
+            cData = cData.slice(-7);
+          }
           if (cData.length > 1) {
             var data = google.visualization.arrayToDataTable([
               ["", "Points", "Average"],
